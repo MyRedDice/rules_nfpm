@@ -1,20 +1,13 @@
-load("//nfpm:defs.bzl", "nfpm_package")
+load("@com_github_ericnorris_rules_nfpm//nfpm:defs.bzl", "nfpm_package")
 
-filegroup(
-    name = "text-files",
-    srcs = glob([
-        "*.txt",
-    ]),
+nfpm_package(
+    name = "test.deb",
+    config = "test.nfpm.yaml",
+    deps = [":meow.txt"],
 )
 
 nfpm_package(
     name = "test.rpm",
-    config = "test-config.yaml",
-    deps = [":text-files"],
-)
-
-nfpm_package(
-    name = "test.deb",
-    config = "test-config.yaml",
-    deps = [":text-files"],
+    config = "test.nfpm.yaml",
+    deps = [":meow.txt"],
 )

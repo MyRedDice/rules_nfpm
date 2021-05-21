@@ -1,17 +1,13 @@
 load("@com_github_ericnorris_rules_nfpm//nfpm:defs.bzl", "nfpm_package")
 
 nfpm_package(
-    name = "helloworld.rpm",
-    config = "helloworld.yaml",
-    deps = [
-        "//cmd/helloworld",
-    ],
+    name = "helloworld.deb",
+    config = "helloworld.nfpm.yaml",
+    deps = ["//cmd/helloworld"],
 )
 
 nfpm_package(
-    name = "helloworld.deb",
-    config = "helloworld.yaml",
-    deps = [
-        "//cmd/helloworld",
-    ],
+    name = "helloworld.rpm",
+    config = "helloworld.nfpm.yaml",
+    deps = ["//cmd/helloworld"],
 )
