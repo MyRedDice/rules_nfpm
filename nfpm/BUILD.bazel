@@ -5,3 +5,9 @@ filegroup(
     srcs = glob(["*"]),
     visibility = ["//:__subpackages__"],
 )
+
+alias(
+    name = "gazelle_nfpm_language",
+    actual = "//go/internal/gazelle",
+    visibility = ["//visibility:public"],
+)

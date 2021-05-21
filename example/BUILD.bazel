@@ -1,1 +1,14 @@
+load("@bazel_gazelle//:def.bzl", "DEFAULT_LANGUAGES", "gazelle", "gazelle_binary")
+
+gazelle_binary(
+    name = "gazelle_binary",
+    languages = DEFAULT_LANGUAGES + [
+        "@com_github_ericnorris_rules_nfpm//nfpm:gazelle_nfpm_language",
+    ],
+)
+
 # gazelle:prefix github.com/ericnorris/rules_nfpm/example
+gazelle(
+    name = "gazelle",
+    gazelle = ":gazelle_binary",
+)

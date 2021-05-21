@@ -10,6 +10,8 @@ While [rules_pkg](https://github.com/bazelbuild/rules_pkg/) _works_, `rules_nfpm
 - No host dependencies (e.g. `rpmbuild` is not needed in `PATH`)
 - Built-in templating of Bazel [workspace status](https://docs.bazel.build/versions/master/user-manual.html#workspace_status) key-value pairs
 
+A [plugin](https://github.com/bazelbuild/bazel-gazelle/blob/master/extend.rst) for [gazelle](https://github.com/bazelbuild/bazel-gazelle) is included that generates the rules and updates their dependencies.
+
 ## Setup
 
 Include the following snippet in your repository's WORKSPACE file:
